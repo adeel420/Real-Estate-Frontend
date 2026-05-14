@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import {navLinks} from "./../data/Data"
+import { navLinks } from "./../data/Data"
 import Link from "next/link";
 import { FiPhone } from "react-icons/fi";
 import { FaRegUserCircle } from "react-icons/fa";
@@ -11,7 +11,7 @@ const Header = () => {
       <Image src="/logo.png" alt="img" width={130} height={22} priority />
       <div className="flex items-center gap-6 text-white">
         {navLinks.map((nav) => (
-          <Link href={nav.link} className="text-sm ">{nav.title}</Link>
+          <Link key={nav.link} href={nav.link} className="text-sm ">{nav.title}</Link>
         ))}
       </div>
       <div className="flex items-center gap-6">
