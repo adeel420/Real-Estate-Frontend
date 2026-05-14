@@ -35,7 +35,7 @@ export default function HeroSection() {
     <section
       ref={ref}
       onMouseMove={handleMouseMove}
-      className="relative w-full h-screen -mt-[72px] overflow-hidden grain"
+      className="relative w-full min-h-screen -mt-[72px] overflow-hidden grain"
     >
       {/* Parallax background */}
       <motion.div className="absolute inset-[-4%]" style={{ x: bgX, y: bgY }}>
@@ -126,7 +126,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 w-full pb-10"
+          className="max-w-7xl mx-auto px-4 mt-4 sm:px-6 w-full pb-10"
         >
           <div className="flex items-center gap-0 w-fit bg-white/[0.06] backdrop-blur-xl border border-white/[0.1] rounded-2xl overflow-hidden">
             {stats.map((s, i) => (
