@@ -71,9 +71,8 @@ const Header = () => {
 
       {/* Mobile Dropdown Menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <nav className="flex flex-col px-4 pb-5 pt-2 border-t border-white/20 gap-1">
           {navLinks.map((nav) => (
