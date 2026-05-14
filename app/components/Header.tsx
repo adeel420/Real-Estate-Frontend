@@ -11,7 +11,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#1b4f5e] relative z-50">
+    <header className="bg-transparent relative z-50">
       {/* Main Nav Bar */}
       <div className="px-4 sm:px-6 py-4 flex items-center justify-between">
         {/* Logo */}
