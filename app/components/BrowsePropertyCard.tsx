@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiMapPin, FiHeart } from "react-icons/fi";
 import { IoBedOutline, IoWaterOutline } from "react-icons/io5";
@@ -68,13 +69,15 @@ export default function BrowsePropertyCard({ property: p }: { property: Property
             <span className="flex items-center gap-1.5"><IoWaterOutline size={13} /> {p.baths} Baths</span>
           )}
           <span className="flex items-center gap-1.5"><BiArea size={13} /> {p.area} sqft</span>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="text-[#1A3C5E] font-semibold text-[11px] border border-[#1A3C5E]/30 rounded-full px-3 py-1 hover:bg-[#1A3C5E] hover:text-white transition-colors duration-200 cursor-pointer"
-          >
-            View
-          </motion.button>
+          <Link href={`/properties/${p.id}`}>
+            <motion.span
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block text-[#1A3C5E] font-semibold text-[11px] border border-[#1A3C5E]/30 rounded-full px-3 py-1 hover:bg-[#1A3C5E] hover:text-white transition-colors duration-200 cursor-pointer"
+            >
+              View
+            </motion.span>
+          </Link>
         </div>
       </div>
     </motion.div>
