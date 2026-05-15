@@ -151,3 +151,18 @@ body {
 .shimmer:hover::after {
   transform: translateX(100%);
 }
+
+/* Filter select option styling */
+.filter-select option {
+  background-color: #1A3C5E;
+  color: #ffffff;
+  font-size: 0.875rem;
+  padding: 8px 12px;
+}
+
+.filter-select option:hover,
+.filter-select option:focus,
+.filter-select option:checked {
+  background-color: #C9A84C;
+  color: #ffffff;
+}

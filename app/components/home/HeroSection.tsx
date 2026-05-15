@@ -56,7 +56,7 @@ export default function HeroSection() {
             className="max-w-[640px] w-full"
           >
             {/* Eyebrow */}
-            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
+            <motion.div variants={fadeUp} className="flex items-center mt-16 gap-3 mb-6">
               <span className="w-10 h-[2px] bg-[#C9A84C]" />
               <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.2em] uppercase">
                 Premium Real Estate

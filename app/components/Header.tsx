@@ -6,12 +6,14 @@ import { navLinks } from "./../data/Data";
 import Link from "next/link";
 import { FiPhone, FiMenu, FiX } from "react-icons/fi";
 import { FaRegUserCircle } from "react-icons/fa";
+import { usePathname, useRouter } from "next/navigation";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = usePathname()
 
   return (
-    <header className="bg-transparent relative z-50">
+    <header className={` relative z-50 ${location === "/" ? 'bg-transparent' : 'bg-[#1a3c5f]'}`}>
       {/* Main Nav Bar */}
       <div className="px-4 sm:px-6 py-4 flex items-center justify-between">
         {/* Logo */}
