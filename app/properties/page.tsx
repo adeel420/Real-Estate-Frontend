@@ -11,7 +11,6 @@ export default function BrowsePropertiesPage() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   const [city, setCity] = useState("");
-  const [propType, setPropType] = useState("");
   const [priceRange, setPriceRange] = useState("");
   const [beds, setBeds] = useState("");
   const [area, setArea] = useState("");
@@ -21,7 +20,6 @@ export default function BrowsePropertiesPage() {
   const filtered = useMemo(() => {
     let result = [...properties];
     if (city) result = result.filter((p) => p.city === city);
-    if (propType) result = result.filter((p) => p.category === propType);
     if (listingType) result = result.filter((p) => p.type === listingType);
     if (beds) {
       result = result.filter((p) =>
@@ -49,9 +47,9 @@ export default function BrowsePropertiesPage() {
     if (sort === "priceLow") result.sort((a, b) => a.priceRaw - b.priceRaw);
     else if (sort === "priceHigh") result.sort((a, b) => b.priceRaw - a.priceRaw);
     return result;
-  }, [city, propType, listingType, beds, priceRange, area, sort]);
+  }, [city, listingType, beds, priceRange, area, sort]);
 
-  const selectDark = "filter-select bg-white/[0.08] border border-white/[0.12] rounded-xl px-3 py-2.5 text-white/80 text-sm outline-none cursor-pointer focus:border-[#C9A84C]/60 transition-colors w-full";
+  const selectDark = "filter-select bg-white/[0.08] border border-white/[0.12] rounded-xl pl-3 pr-8 py-2.5 text-white/80 text-sm outline-none cursor-pointer focus:border-[#C9A84C]/60 transition-colors w-full appearance-none";
 
   return (
     <div className="min-h-screen bg-[#F5F2ED]">
@@ -96,17 +94,6 @@ export default function BrowsePropertiesPage() {
                 <option value="">All Cities</option>
                 {["Lahore", "Karachi", "Islamabad", "Rawalpindi", "Peshawar"].map((c) => (
                   <option key={c} value={c}>{c}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* Type */}
-            <div className="flex flex-col gap-1 flex-1 min-w-[120px]">
-              <label className="text-[#C9A84C] text-[10px] font-semibold tracking-[0.15em] uppercase">Type</label>
-              <select className={selectDark} value={propType} onChange={(e) => setPropType(e.target.value)}>
-                <option value="">All Types</option>
-                {["Apartment", "Villa", "Commercial", "Plot"].map((t) => (
-                  <option key={t} value={t}>{t}</option>
                 ))}
               </select>
             </div>
@@ -161,7 +148,7 @@ export default function BrowsePropertiesPage() {
             <motion.button
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              onClick={() => { setCity(""); setPropType(""); setPriceRange(""); setBeds(""); setArea(""); setListingType(""); }}
+              onClick={() => { setCity(""); setPriceRange(""); setBeds(""); setArea(""); setListingType(""); }}
               className="flex items-center justify-center gap-2 bg-[#C9A84C] hover:bg-[#b8943e] text-white font-bold text-sm px-6 py-2.5 rounded-xl transition-colors duration-200 flex-shrink-0 self-end cursor-pointer whitespace-nowrap"
             >
               Reset
@@ -193,7 +180,7 @@ export default function BrowsePropertiesPage() {
 
           <motion.div variants={fadeUp} >
             <select
-              className="bg-white border  border-gray-200 rounded-xl   px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#C9A84C]/60 transition-colors cursor-pointer shadow-sm"
+              className="filter-select bg-white border border-yellow-800/[0.12] rounded-xl pl-3 pr-8 py-2.5 text-black/80 text-sm outline-none cursor-pointer focus:border-[#C9A84C]/60 transition-colors w-full appearance-none"
               value={sort}
               onChange={(e) => setSort(e.target.value)}
             >
