@@ -1,6 +1,6 @@
 export const navLinks = [
   { id: 0, title: "Home", link: "/" },
-  { id: 1, title: "Listing", link: "/listing" },
+  { id: 1, title: "Properties", link: "/properties" },
   { id: 2, title: "Members", link: "/members" },
   { id: 3, title: "Blog", link: "/blog" },
   { id: 4, title: "Pages", link: "/pages" },
@@ -8,11 +8,36 @@ export const navLinks = [
 ];
 
 export const categories = [
-  { id: 0, title: "Town House", count: 2, img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&q=80" },
-  { id: 1, title: "Modern Villa", count: 10, img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&q=80" },
-  { id: 2, title: "Apartment", count: 3, img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&q=80" },
-  { id: 3, title: "Single Family", count: 5, img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=80" },
-  { id: 4, title: "Office", count: 3, img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80" },
+  {
+    id: 0,
+    title: "Town House",
+    count: 2,
+    img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&q=80",
+  },
+  {
+    id: 1,
+    title: "Modern Villa",
+    count: 10,
+    img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&q=80",
+  },
+  {
+    id: 2,
+    title: "Apartment",
+    count: 3,
+    img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&q=80",
+  },
+  {
+    id: 3,
+    title: "Single Family",
+    count: 5,
+    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=80",
+  },
+  {
+    id: 4,
+    title: "Office",
+    count: 3,
+    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80",
+  },
 ];
 
 export const featuredHomes = [

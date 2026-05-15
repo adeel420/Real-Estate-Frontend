@@ -5,12 +5,12 @@ import { staggerContainer, fadeUp } from "../../../lib/animations";
 import PropertyCard from "./PropertyCard";
 
 const properties = [
-  { id: 0, title: "Skyper Pool Apartment", address: "1020 Bloomingdale Ave", price: "$280,000", tag: "FOR SALE", beds: 4, baths: 2, sqft: 450, img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80", category: "Apartments" },
-  { id: 1, title: "North Dillard Villa",   address: "4330 Bell Shoals Rd",   price: "$250",    priceType: "/mo", tag: "FOR RENT", beds: 4, baths: 2, sqft: 400, img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80", category: "Villas", featured: true },
-  { id: 2, title: "Eaton Garth Penthouse", address: "7722 18th Ave, Brooklyn", price: "$180,000", tag: "FOR SALE", beds: 4, baths: 2, sqft: 450, img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=700&q=80", category: "Apartments", featured: true },
-  { id: 3, title: "Willow Creek Estate",   address: "88 Willow Creek Blvd",  price: "$320,000", tag: "FOR SALE", beds: 5, baths: 3, sqft: 600, img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80", category: "Villas" },
-  { id: 4, title: "Sunset Ridge Office",   address: "210 Sunset Ridge Dr",   price: "$150",    priceType: "/mo", tag: "FOR RENT", beds: 2, baths: 1, sqft: 320, img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80", category: "Commercial" },
-  { id: 5, title: "Harbor View Loft",      address: "55 Harbor View Blvd",   price: "$420,000", tag: "FOR SALE", beds: 3, baths: 2, sqft: 520, img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80", category: "Apartments" },
+  { id: 0, title: "DHA Phase 5 Luxury Apartment", address: "DHA Phase 5, Lahore", price: "PKR 1.8 Crore", tag: "FOR SALE", beds: 3, baths: 2, sqft: 1400, img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80", category: "Apartments", featured: true },
+  { id: 1, title: "Bahria Town Premium Villa", address: "Bahria Town, Karachi", price: "PKR 38,000", priceType: "/mo", tag: "FOR RENT", beds: 4, baths: 3, sqft: 3200, img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80", category: "Villas", featured: true },
+  { id: 2, title: "Gulberg Residencia Penthouse", address: "Gulberg, Lahore", price: "PKR 2.4 Crore", tag: "FOR SALE", beds: 4, baths: 3, sqft: 2100, img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80", category: "Apartments" },
+  { id: 3, title: "F-7 Islamabad Modern Villa", address: "F-7 Markaz, Islamabad", price: "PKR 5.2 Crore", tag: "FOR SALE", beds: 5, baths: 4, sqft: 4500, img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80", category: "Villas" },
+  { id: 4, title: "Blue Area Commercial Office", address: "Blue Area, Islamabad", price: "PKR 85,000", priceType: "/mo", tag: "FOR RENT", beds: 0, baths: 2, sqft: 1800, img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80", category: "Commercial" },
+  { id: 5, title: "Clifton Sea-View Apartment", address: "Clifton Block 4, Karachi", price: "PKR 3.1 Crore", tag: "FOR SALE", beds: 3, baths: 2, sqft: 1650, img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=700&q=80", category: "Apartments" },
 ];
 
 const tabs = ["All", "Apartments", "Villas", "Commercial"];
