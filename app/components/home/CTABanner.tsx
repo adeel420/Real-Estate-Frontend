@@ -4,12 +4,14 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { FiArrowRight, FiCheck } from "react-icons/fi";
 import { fadeUp, staggerContainer } from "../../../lib/animations";
+import { useRouter } from "next/navigation";
 
 const trustBadges = ["No Hidden Fees", "Free Consultation", "500+ Happy Clients"];
 
 export default function CTABanner() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const router = useRouter()
 
   return (
     <section
@@ -113,7 +115,8 @@ export default function CTABanner() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="shimmer inline-flex items-center gap-2 bg-[#C9A84C] text-[#0D0D0D] font-bold text-sm px-8 py-4 rounded-full cursor-pointer"
+              onClick={() => router.push('/properties')}
+              className="shimmer inline-flex items-center gap-2 bg-[#C9A84C] text-[white] font-bold text-sm px-8 py-4 rounded-full cursor-pointer"
             >
               Browse Properties
               <FiArrowRight size={15} />
@@ -124,7 +127,7 @@ export default function CTABanner() {
               transition={{ duration: 0.2 }}
               className="inline-flex items-center gap-2 border border-white/40 text-white font-bold text-sm px-8 py-4 rounded-full cursor-pointer"
             >
-              Talk to an Agent
+              Add Property
             </motion.button>
           </motion.div>
 

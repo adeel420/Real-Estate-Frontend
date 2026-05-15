@@ -8,7 +8,6 @@ import Testimonials from "./components/home/Testimonials";
 import StatsSection from "./components/home/StatsSection";
 import FAQSection from "./components/home/FAQSection";
 import CTABanner from "./components/home/CTABanner";
-import Footer from "./components/home/Footer";
 
 export default function Home() {
   return (
@@ -23,7 +22,6 @@ export default function Home() {
       <StatsSection />
       <FAQSection />
       <CTABanner />
-      <Footer />
     </main>
   );
 }

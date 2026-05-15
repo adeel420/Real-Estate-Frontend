@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { FiPhone, FiMail, FiLinkedin } from "react-icons/fi";
+import { FiPhone, FiMail } from "react-icons/fi";
 import Badge from "../ui/Badge";
 import { scaleIn } from "../../../lib/animations";
 
@@ -80,13 +81,15 @@ export default function AgentCard({ agent }: { agent: Agent }) {
         </div>
 
         {/* View Profile button */}
-        <motion.button
-          whileHover={{ backgroundColor: "#C9A84C", color: "#ffffff", borderColor: "#C9A84C" }}
-          transition={{ duration: 0.2 }}
-          className="w-full border border-gray-200 text-[#0D0D0D] text-sm font-semibold py-2.5 rounded-xl cursor-pointer"
-        >
-          View Profile
-        </motion.button>
+        <Link href={`/agents/${agent.id}`} className="block">
+          <motion.div
+            whileHover={{ backgroundColor: "#C9A84C", color: "#ffffff", borderColor: "#C9A84C" }}
+            transition={{ duration: 0.2 }}
+            className="w-full border border-gray-200 text-[#0D0D0D] text-sm font-semibold py-2.5 rounded-xl cursor-pointer text-center"
+          >
+            View Profile
+          </motion.div>
+        </Link>
       </div>
     </motion.div>
   );

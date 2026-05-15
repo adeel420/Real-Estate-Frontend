@@ -1,10 +1,11 @@
 export const navLinks = [
   { id: 0, title: "Home", link: "/" },
   { id: 1, title: "Properties", link: "/properties" },
-  { id: 2, title: "Members", link: "/members" },
-  { id: 3, title: "Blog", link: "/blog" },
-  { id: 4, title: "Pages", link: "/pages" },
-  { id: 5, title: "Contact", link: "/contact" },
+  { id: 2, title: "Agents", link: "/agents" },
+  { id: 3, title: "Cities", link: "/cities" },
+  { id: 4, title: "About Us", link: "/about" },
+  { id: 5, title: "Blog", link: "/blog" },
+  { id: 6, title: "Contact", link: "/contact" },
 ];
 
 export const categories = [

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { MdLocationOn } from "react-icons/md";
+import { FaEnvelope, FaPhone, FaPhoneAlt } from "react-icons/fa";
 
 const links = {
   Company:  ["About Us", "Careers", "Press", "Blog", "Contact"],
@@ -60,9 +62,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-sm tracking-wide mb-5 text-white">Contact</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
-              <li>📍 123 Luxury Ave, New York, NY</li>
-              <li>📞 +1 (800) 555-0199</li>
-              <li>✉️ hello@luxestate.com</li>
+              <li className="flex items-center gap-3 "><MdLocationOn className="text-white" /> 123 Luxury Ave, New York, NY</li>
+              <li className="flex items-center gap-3 "><FaPhoneAlt  className="text-white "/> +1 (800) 555-0199</li>
+              <li className="flex items-center gap-3 "><FaEnvelope className="text-white"/> hello@luxestate.com</li>
               <li className="pt-2">
                 <span className="inline-flex items-center gap-1.5 bg-[#C9A84C]/10 border border-[#C9A84C]/20 text-[#C9A84C] text-xs font-semibold px-3 py-1.5 rounded-full">
                   Mon–Sat: 9am – 7pm
