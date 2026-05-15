@@ -226,7 +226,7 @@ export default function BrowsePropertiesPage() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => {
-                  setCity(""); setPropType(""); setPriceRange("");
+                  setCity("");  setPriceRange("");
                   setBeds(""); setArea(""); setListingType("");
                 }}
                 className="mt-5 bg-[#C9A84C] text-white font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-[#b8943e] transition-colors cursor-pointer"

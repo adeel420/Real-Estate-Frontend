@@ -1,5 +1,5 @@
 "use client";
-import { use, useState } from "react";
+import { use, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -19,10 +19,18 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
 
   const [saved, setSaved] = useState(false);
   const [activeImg, setActiveImg] = useState(0);
+  const [paused, setPaused] = useState(false);
   const gallery = property.gallery ?? [property.img];
 
-  const prev = () => setActiveImg((i) => (i - 1 + gallery.length) % gallery.length);
-  const next = () => setActiveImg((i) => (i + 1) % gallery.length);
+  const prev = useCallback(() => setActiveImg((i) => (i - 1 + gallery.length) % gallery.length), [gallery.length]);
+  const next = useCallback(() => setActiveImg((i) => (i + 1) % gallery.length), [gallery.length]);
+
+  // Auto-slide every 3 seconds
+  useEffect(() => {
+    if (paused || gallery.length <= 1) return;
+    const timer = setInterval(next, 3000);
+    return () => clearInterval(timer);
+  }, [paused, gallery.length, next]);
 
   const similar = properties.filter((p) => p.category === property.category && p.id !== property.id).slice(0, 3);
 
@@ -30,7 +38,11 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
     <div className="min-h-screen bg-[#F5F2ED]">
 
       {/* ── Hero Image ── */}
-      <div className="relative h-[55vh] min-h-[400px] w-full overflow-hidden bg-[#1A3C5E]">
+      <div
+        className="relative h-[55vh] min-h-[400px] w-full overflow-hidden bg-[#1A3C5E]"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
         <AnimatePresence mode="wait">
           <motion.div
             key={activeImg}
@@ -74,20 +86,37 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
         {/* Gallery arrows */}
         {gallery.length > 1 && (
           <>
-            <button onClick={prev} className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/30 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-black/50 transition-colors cursor-pointer">
+            <button onClick={() => { prev(); setPaused(true); setTimeout(() => setPaused(false), 5000); }} className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/30 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-black/50 transition-colors cursor-pointer z-10">
               <FiChevronLeft size={16} />
             </button>
-            <button onClick={next} className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/30 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-black/50 transition-colors cursor-pointer">
+            <button onClick={() => { next(); setPaused(true); setTimeout(() => setPaused(false), 5000); }} className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/30 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-black/50 transition-colors cursor-pointer z-10">
               <FiChevronRight size={16} />
             </button>
           </>
         )}
 
+        {/* Progress bar */}
+        {gallery.length > 1 && !paused && (
+          <div className="absolute top-0 left-0 right-0 h-[3px] bg-white/10 z-20">
+            <motion.div
+              key={activeImg}
+              initial={{ width: "0%" }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 3, ease: "linear" }}
+              className="h-full bg-[#C9A84C]"
+            />
+          </div>
+        )}
+
         {/* Dot indicators */}
         {gallery.length > 1 && (
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5">
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
             {gallery.map((_, i) => (
-              <button key={i} onClick={() => setActiveImg(i)} className={`w-1.5 h-1.5 rounded-full transition-all cursor-pointer ${i === activeImg ? "bg-[#C9A84C] w-4" : "bg-white/50"}`} />
+              <button
+                key={i}
+                onClick={() => { setActiveImg(i); setPaused(true); setTimeout(() => setPaused(false), 5000); }}
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${i === activeImg ? "bg-[#C9A84C] w-4" : "bg-white/50 w-1.5"}`}
+              />
             ))}
           </div>
         )}

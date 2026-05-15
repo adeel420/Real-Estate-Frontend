@@ -23,7 +23,7 @@ export default function CitiesPage() {
 
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-[#1A3C5E] pt-20 pb-32 px-4 sm:px-6">
-        <Image src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&q=80" alt="cities" fill className="object-cover opacity-10" priority />
+        <Image src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1600&q=80" alt="cities" fill className="object-cover opacity-10 -scale-x-100" priority />
         <div className="absolute top-[-80px] left-[-80px] w-[400px] h-[400px] rounded-full bg-[#C9A84C]/10 blur-[80px] orb-1 pointer-events-none" />
         <div className="absolute bottom-[-60px] right-[-60px] w-[350px] h-[350px] rounded-full bg-[#C9A84C]/10 blur-[80px] orb-2 pointer-events-none" />
 
@@ -158,7 +158,7 @@ export default function CitiesPage() {
               </Link>
               <Link href="/contact">
                 <motion.div whileHover={{ backgroundColor: "rgba(255,255,255,1)", color: "#1A3C5E" }} transition={{ duration: 0.2 }} className="inline-flex items-center gap-2 border border-white/40 text-white font-bold text-sm px-8 py-4 rounded-full cursor-pointer">
-                  Talk to an Agent
+                  Contact Us
                 </motion.div>
               </Link>
             </motion.div>
