@@ -11,6 +11,7 @@ import { usePathname, useRouter } from "next/navigation";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = usePathname()
+  const router = useRouter()
 
   return (
     <header className={` relative z-50 ${location === "/" ? 'bg-transparent' : 'bg-[#1a3c5f]'}`}>
@@ -23,7 +24,8 @@ const Header = () => {
           width={130}
           height={22}
           priority
-          className="flex-shrink-0"
+          onClick={() => router.push('/')}
+          className="flex-shrink-0 cursor-pointer"
         />
 
         {/* Desktop Nav Links */}

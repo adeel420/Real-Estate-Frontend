@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiMapPin, FiHeart, FiPhone, FiMail, FiArrowLeft, FiCheck, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { IoBedOutline, IoWaterOutline } from "react-icons/io5";
 import { BiArea } from "react-icons/bi";
-import { MdOutlineGarage, MdOutlineCalendarToday, MdOutlineApartment } from "react-icons/md";
+import { MdOutlineGarage, MdOutlineCalendarToday, MdOutlineApartment, MdOutlineTv, MdOutlineLocalLaundryService, MdOutlineKitchen } from "react-icons/md";
 import Badge from "../../components/ui/Badge";
 import { fadeUp, staggerContainer } from "../../../lib/animations";
 import properties from "../../../lib/properties";
@@ -149,6 +149,7 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
               animate="visible"
               className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6"
             >
+              <p className="text-[#C9A84C] text-xs font-semibold tracking-[0.2em] uppercase mb-4">At a Glance</p>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {property.beds !== undefined && (
                   <motion.div variants={fadeUp} className="flex flex-col items-center text-center p-3 bg-[#F5F2ED] rounded-xl">
@@ -339,11 +340,10 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
               <p className="text-[#C9A84C] text-xs font-semibold tracking-[0.2em] uppercase mb-4">Details</p>
               <div className="space-y-3 text-sm">
                 {[
-                  { label: "Property ID", value: `#PKR-${property.id.padStart(4, "0")}` },
-                  { label: "Category", value: property.category },
-                  { label: "City", value: property.city },
+                  { label: "Category",     value: property.category },
+                  { label: "City",         value: property.city },
                   { label: "Listing Type", value: property.type },
-                  { label: "Area", value: `${property.area} sq ft` },
+                  { label: "Area",         value: `${property.area} sq ft` },
                   ...(property.yearBuilt ? [{ label: "Year Built", value: String(property.yearBuilt) }] : []),
                 ].map(({ label, value }) => (
                   <div key={label} className="flex justify-between items-center border-b border-gray-50 pb-2.5 last:border-0 last:pb-0">

@@ -21,6 +21,10 @@ export interface Property {
   yearBuilt?: number;
   floors?: number;
   parking?: number;
+  tv?: number;
+  laundry?: boolean;
+  garage?: number;
+  kitchen?: number;
 }
 
 const properties: Property[] = [
@@ -52,6 +56,10 @@ const properties: Property[] = [
     yearBuilt: 2021,
     floors: 8,
     parking: 1,
+    tv: 2,
+    laundry: true,
+    garage: 1,
+    kitchen: 1,
   },
   {
     id: "2",
@@ -81,6 +89,10 @@ const properties: Property[] = [
     yearBuilt: 2020,
     floors: 2,
     parking: 3,
+    tv: 5,
+    laundry: true,
+    garage: 3,
+    kitchen: 2,
   },
   {
     id: "3",
@@ -106,6 +118,10 @@ const properties: Property[] = [
     yearBuilt: 2019,
     floors: 1,
     parking: 2,
+    tv: 1,
+    laundry: false,
+    garage: 2,
+    kitchen: 1,
   },
   {
     id: "4",
@@ -156,6 +172,10 @@ const properties: Property[] = [
     yearBuilt: 2018,
     floors: 5,
     parking: 1,
+    tv: 1,
+    laundry: true,
+    garage: 1,
+    kitchen: 1,
   },
   {
     id: "6",
@@ -183,6 +203,10 @@ const properties: Property[] = [
     yearBuilt: 2022,
     floors: 2,
     parking: 2,
+    tv: 4,
+    laundry: true,
+    garage: 2,
+    kitchen: 1,
   },
   {
     id: "7",
@@ -207,6 +231,10 @@ const properties: Property[] = [
     yearBuilt: 2017,
     floors: 3,
     parking: 2,
+    tv: 2,
+    laundry: false,
+    garage: 2,
+    kitchen: 1,
   },
   {
     id: "8",
