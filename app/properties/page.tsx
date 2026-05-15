@@ -178,7 +178,7 @@ export default function BrowsePropertiesPage() {
             <div className="w-14 h-[3px] bg-[#C9A84C] rounded-full mt-3" />
           </motion.div>
 
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} >
             <select
               className="filter-select bg-white border border-yellow-800/[0.12] rounded-xl pl-3 pr-8 py-2.5 text-black/80 text-sm outline-none cursor-pointer focus:border-[#C9A84C]/60 transition-colors w-full appearance-none"
               value={sort}
@@ -189,6 +189,7 @@ export default function BrowsePropertiesPage() {
               <option value="priceHigh">Price: High to Low</option>
               <option value="popular">Most Popular</option>
             </select>
+
           </motion.div>
         </motion.div>
 
