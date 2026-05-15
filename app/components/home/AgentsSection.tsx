@@ -2,19 +2,10 @@
 import { useRef, useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { fadeUp, staggerContainer } from "../../../lib/animations";
-import AgentCard, { type Agent } from "./AgentCard";
+import AgentCard from "./AgentCard";
+import allAgents from "../../../lib/agents";
 
-const agents: Agent[] = [
-  { id: 0, name: "Alexandra Moore", role: "Senior Property Agent", specialty: "Luxury", deals: 48, exp: 12, rating: 4.9, img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80", category: "Luxury" },
-  { id: 1, name: "James Whitfield", role: "Residential Specialist", specialty: "Residential", deals: 31, exp: 7, rating: 4.8, img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80", category: "Residential" },
-  { id: 2, name: "Priya Nair", role: "Commercial Advisor", specialty: "Commercial", deals: 24, exp: 9, rating: 4.9, img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80", category: "Commercial" },
-  { id: 3, name: "Marcus Chen", role: "Luxury Estate Consultant", specialty: "Luxury", deals: 56, exp: 15, rating: 5.0, img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80", category: "Luxury" },
-  { id: 4, name: "Sofia Reyes", role: "Residential Agent", specialty: "Residential", deals: 19, exp: 4, rating: 4.7, img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&q=80", category: "Residential" },
-  { id: 5, name: "Daniel Okafor", role: "Commercial Broker", specialty: "Commercial", deals: 37, exp: 10, rating: 4.8, img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&q=80", category: "Commercial" },
-  { id: 6, name: "Claire Fontaine", role: "Luxury Property Advisor", specialty: "Luxury", deals: 42, exp: 11, rating: 4.9, img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&q=80", category: "Luxury" },
-  { id: 7, name: "Ryan Thornton", role: "Residential Consultant", specialty: "Residential", deals: 28, exp: 6, rating: 4.8, img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=80", category: "Residential" },
-];
-
+const agents = allAgents.slice(0, 8);
 const tabs = ["All", "Residential", "Commercial", "Luxury"];
 
 export default function AgentsSection() {

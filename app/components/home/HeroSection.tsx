@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { fadeUp, staggerContainer } from "../../../lib/animations";
 import Button from "../ui/Button";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const stats = [
   { value: "1,200+", label: "Listings" },
@@ -18,6 +20,7 @@ const budgets  = ["Any Budget", "< $100K", "$100K–$300K", "$300K–$600K", "$6
 export default function HeroSection() {
   const ref = useRef<HTMLElement>(null);
   const mouseX = useMotionValue(0);
+  const router = useRouter()
   const mouseY = useMotionValue(0);
   const [location, setLocation] = useState("");
 
@@ -78,8 +81,11 @@ export default function HeroSection() {
 
             {/* CTA buttons */}
             <motion.div variants={fadeUp} className="flex items-center gap-4 flex-wrap">
-              <Button variant="accent">Browse Listings</Button>
-              <Button variant="ghost">Watch Tour →</Button>
+              <Button onClick={() => router.push('/properties')} variant="accent">
+                Browse Properties
+              
+                </Button>
+              <Button variant="ghost">Add Property</Button>
             </motion.div>
           </motion.div>
         </div>
