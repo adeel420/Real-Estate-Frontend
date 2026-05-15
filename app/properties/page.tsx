@@ -191,9 +191,9 @@ export default function BrowsePropertiesPage() {
             <div className="w-14 h-[3px] bg-[#C9A84C] rounded-full mt-3" />
           </motion.div>
 
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} >
             <select
-              className="bg-white border border-gray-200 rounded-xl  px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#C9A84C]/60 transition-colors cursor-pointer shadow-sm"
+              className="bg-white border  border-gray-200 rounded-xl   px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#C9A84C]/60 transition-colors cursor-pointer shadow-sm"
               value={sort}
               onChange={(e) => setSort(e.target.value)}
             >
@@ -202,6 +202,7 @@ export default function BrowsePropertiesPage() {
               <option value="priceHigh">Price: High to Low</option>
               <option value="popular">Most Popular</option>
             </select>
+
           </motion.div>
         </motion.div>
 
