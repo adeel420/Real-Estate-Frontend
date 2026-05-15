@@ -12,8 +12,15 @@ export interface Property {
   area: number;
   agentName: string;
   agentInitials: string;
+  agentPhone?: string;
   img: string;
+  gallery?: string[];
   featured?: boolean;
+  description?: string;
+  amenities?: string[];
+  yearBuilt?: number;
+  floors?: number;
+  parking?: number;
 }
 
 const properties: Property[] = [
@@ -31,8 +38,20 @@ const properties: Property[] = [
     area: 1400,
     agentName: "Ahmed Raza",
     agentInitials: "AR",
+    agentPhone: "+92 300 1234567",
     img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80",
+    ],
     featured: true,
+    description: "A beautifully designed modern apartment located in the heart of DHA Phase 5, Lahore. This spacious 3-bedroom unit features premium finishes, floor-to-ceiling windows, and a fully equipped kitchen. Ideal for families seeking comfort and convenience in one of Lahore's most sought-after neighbourhoods.",
+    amenities: ["24/7 Security", "Backup Generator", "Elevator", "Parking", "Gym", "Rooftop Terrace", "CCTV", "Gas"],
+    yearBuilt: 2021,
+    floors: 8,
+    parking: 1,
   },
   {
     id: "2",
@@ -48,8 +67,20 @@ const properties: Property[] = [
     area: 4200,
     agentName: "Sara Khan",
     agentInitials: "SK",
+    agentPhone: "+92 321 9876543",
     img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80",
+    ],
     featured: true,
+    description: "An exquisite luxury villa nestled in the prestigious Bahria Town, Karachi. Featuring a private swimming pool, lush landscaped garden, and five generously sized bedrooms. The villa boasts Italian marble flooring, a state-of-the-art kitchen, and a dedicated home theatre room.",
+    amenities: ["Swimming Pool", "Garden", "Home Theatre", "Smart Home", "Solar Panels", "Servant Quarters", "Parking x3", "CCTV"],
+    yearBuilt: 2020,
+    floors: 2,
+    parking: 3,
   },
   {
     id: "3",
@@ -63,7 +94,18 @@ const properties: Property[] = [
     area: 1800,
     agentName: "Usman Ali",
     agentInitials: "UA",
+    agentPhone: "+92 333 4567890",
     img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80",
+    ],
+    description: "Prime commercial space on the ground floor of a modern plaza in Blue Area, Islamabad's central business district. Ideal for retail, showroom, or corporate office use. High footfall area with excellent visibility and easy access from major roads.",
+    amenities: ["Central AC", "Elevator", "24/7 Security", "Backup Power", "Parking", "Fiber Internet", "Reception Area"],
+    yearBuilt: 2019,
+    floors: 1,
+    parking: 2,
   },
   {
     id: "4",
@@ -77,7 +119,16 @@ const properties: Property[] = [
     area: 2250,
     agentName: "Fatima Malik",
     agentInitials: "FM",
+    agentPhone: "+92 345 6789012",
     img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900&q=80",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80",
+    ],
+    description: "A prime 10 Marla residential plot located in the heart of Gulberg, Lahore. Situated on a wide road with all utilities available including gas, electricity, and water. Perfect opportunity to build your dream home in one of Lahore's most prestigious localities.",
+    amenities: ["Gas Available", "Electricity", "Water Supply", "Wide Road", "Gated Community", "Near Schools", "Near Hospitals"],
+    yearBuilt: undefined,
+    parking: 0,
   },
   {
     id: "5",
@@ -93,7 +144,18 @@ const properties: Property[] = [
     area: 950,
     agentName: "Bilal Hussain",
     agentInitials: "BH",
+    agentPhone: "+92 312 3456789",
     img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&q=80",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80",
+    ],
+    description: "A cozy and well-maintained 2-bedroom apartment in the upscale Clifton Block 4, Karachi. The apartment offers a comfortable living space with modern fittings, a well-equipped kitchen, and a pleasant view of the neighbourhood. Walking distance from major restaurants and shopping centres.",
+    amenities: ["24/7 Security", "Elevator", "Backup Generator", "Parking", "CCTV", "Gas", "Water Tank"],
+    yearBuilt: 2018,
+    floors: 5,
+    parking: 1,
   },
   {
     id: "6",
@@ -109,7 +171,18 @@ const properties: Property[] = [
     area: 3500,
     agentName: "Nadia Shah",
     agentInitials: "NS",
+    agentPhone: "+92 300 9876543",
     img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80",
+    ],
+    description: "A stunning modern villa in the well-planned Bahria Town Phase 8, Rawalpindi. This 4-bedroom property features a contemporary design with high ceilings, open-plan living areas, and a beautifully landscaped garden. Located in a secure gated community with 24/7 surveillance.",
+    amenities: ["Gated Community", "Garden", "Backup Generator", "Parking x2", "CCTV", "Solar Panels", "Servant Quarter", "Gym"],
+    yearBuilt: 2022,
+    floors: 2,
+    parking: 2,
   },
   {
     id: "7",
@@ -123,7 +196,17 @@ const properties: Property[] = [
     area: 1200,
     agentName: "Tariq Mehmood",
     agentInitials: "TM",
+    agentPhone: "+92 333 1122334",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80",
+    ],
+    description: "A well-located commercial office space in Saddar, Peshawar's main commercial hub. The space is fully fitted with modern interiors, false ceiling, and dedicated server room. Suitable for corporate offices, call centres, or professional services firms.",
+    amenities: ["Central AC", "Backup Power", "Elevator", "Parking", "Fiber Internet", "Security", "Pantry"],
+    yearBuilt: 2017,
+    floors: 3,
+    parking: 2,
   },
   {
     id: "8",
@@ -137,7 +220,16 @@ const properties: Property[] = [
     area: 4500,
     agentName: "Zara Qureshi",
     agentInitials: "ZQ",
+    agentPhone: "+92 321 5544332",
     img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80",
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900&q=80",
+    ],
+    description: "A rare corner plot of 1 Kanal in the prestigious F-10 sector of Islamabad. This prime piece of real estate offers excellent development potential with all utilities in place. Surrounded by embassies, top schools, and upscale residential properties — a truly unmissable investment opportunity.",
+    amenities: ["Corner Plot", "Gas Available", "Electricity", "Water Supply", "Wide Road", "Near Embassies", "CDA Approved"],
+    yearBuilt: undefined,
+    parking: 0,
   },
 ];
 

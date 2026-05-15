@@ -193,7 +193,7 @@ export default function BrowsePropertiesPage() {
 
           <motion.div variants={fadeUp}>
             <select
-              className="bg-white border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#C9A84C]/60 transition-colors cursor-pointer shadow-sm"
+              className="bg-white border border-gray-200 rounded-xl  px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#C9A84C]/60 transition-colors cursor-pointer shadow-sm"
               value={sort}
               onChange={(e) => setSort(e.target.value)}
             >
